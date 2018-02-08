@@ -1,11 +1,16 @@
 
 " Plugins will be downloaded under the specified directory.
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 Plug 'fatih/vim-go'
 Plug 'godoctor/godoctor.vim'
 
+" PlugInstall and PlugUpdate will clone fzf in ~/.fzf and run install script
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  " Both options are optional. You don't have to install fzf in ~/.fzf
+  " and you don't have to run install script if you use fzf only in Vim.
 " List ends here. Plugins become visible to Vim after this call.
+
 call plug#end()
 
 syntax enable  
